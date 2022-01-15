@@ -69,9 +69,9 @@ super + Escape
 ### WM WINDOW
 #
 
-# close and kill
+# close window
 super + shift + q
-	bspc node -k
+	bspc node -c
 
 # toggle floating
 super + shift + f

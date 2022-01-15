@@ -98,7 +98,7 @@ super + ctrl + {Left,Down,Up,Right}
 
 # cycle trought nodes
 super + {j,k}
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.window
 
 ###############################
 

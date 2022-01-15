@@ -130,7 +130,7 @@ ctrl + alt + shift + {Left,Right}
 super + t
 	bsp-layout set tall
 super + shift + t
-	bsp-layout set tall
+	bsp-layout set tiled
 super + g
 	bsp-layout set grid
 super + m

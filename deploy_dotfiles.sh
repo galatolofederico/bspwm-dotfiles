@@ -12,7 +12,6 @@ bin
 .config/autostart/polybar.desktop
 .config/autostart/picom.desktop
 .config/autostart/sxhkd.desktop
-.config/autostart/alttab.desktop
 .config/bspwm
 .config/sxhkd
 .config/dunst

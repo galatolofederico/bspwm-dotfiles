@@ -29,6 +29,15 @@ super + v
 super + r
 	"$HOME/bin/randomwall"
 
+ctrl + @space
+	dunstctl close
+
+ctrl + shift + space
+	dunstctl close-all
+
+ctrl + Tab
+	dunstctl history-pop
+
 ###############################
 
 #

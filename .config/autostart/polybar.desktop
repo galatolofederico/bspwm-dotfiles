@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=polybar
+Comment=polybar
+Exec=polybar -r -config ~/.config/polybar/config.ini top
+OnlyShowIn=bspwm

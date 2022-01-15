@@ -1,0 +1,7 @@
+browser,firefox -P
+files,thunar
+email,thunderbird
+music,spotify
+im,telegram-desktop
+calendar,firefox --new-window https://cloud.galatolo.me/apps/calendar/dayGridMonth/now
+password-manager,bitwarden-desktop

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=conky
+Comment=conky
+Exec=conky
+OnlyShowIn=bspwm

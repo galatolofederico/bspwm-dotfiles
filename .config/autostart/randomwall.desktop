@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=randomwall
+Comment=randomwall
+Exec=bash -c "~/bin/randomwall loop"
+OnlyShowIn=bspwm

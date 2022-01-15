@@ -1,0 +1,22 @@
+#!/bin/sh
+
+WALLPAPERS_FOLDER="$HOME/.config/wallpapers"
+WAIT=300
+
+if [ ! -d "$WALLPAPERS_FOLDER" ]; then
+    echo "Downloading wallpapers"
+    git clone --depth 1 https://github.com/makccr/wallpapers "$WALLPAPERS_FOLDER"
+    rm -rf "$WALLPAPERS_FOLDER/.git"
+fi
+
+while :; do
+    wallpaper="$(find "$WALLPAPERS_FOLDER" -type f -exec readlink -f {} \; | shuf -n 1)"
+    echo "Setting $wallpaper as wallpaper"
+    feh --bg-scale "$wallpaper"
+    if [ ! "$1" = "loop" ]; then
+        echo "Exiting"
+        exit 0;
+    fi
+    echo "Waiting $WAIT seconds"
+    sleep $WAIT
+done

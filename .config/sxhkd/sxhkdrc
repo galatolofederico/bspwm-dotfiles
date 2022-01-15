@@ -1,0 +1,135 @@
+# 
+### Miscellaneous
+#
+
+# reload bspwm and xshkd
+super + shift + r
+	bspc wm -r && pkill -USR1 -x sxhkd
+
+###############################
+
+
+# 
+### Applications
+#
+
+# run terminal
+super + Return
+	alacritty
+
+# run screenshot
+Print
+	flameshot gui
+
+###############################
+
+#
+### XF86
+#
+
+XF86AudioPlay
+    playerctl play-pause
+    
+XF86AudioStop
+    playerctl stop
+
+XF86Audio{Prev,Next}
+    playerctl {previous, next}
+
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86Audio{LowerVolume,RaiseVolume}
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+
+
+###############################
+
+#
+### MENUS
+#
+
+# open menu
+super + @space
+	rofi -show drun -show-icons
+# open favourites
+super + o
+	"$HOME/bin/dmenu_favourites" "$HOME/.config/favourites/apps"
+# open settings
+super + s
+	"$HOME/bin/dmenu_favourites" "$HOME/.config/favourites/settings"
+# open favourites
+super + Escape
+	"$HOME/bin/dmenu_favourites" "$HOME/.config/favourites/exit"
+
+###############################
+
+
+#
+### WM WINDOW
+#
+
+# close and kill
+super + shift + q
+	bspc node -k
+
+# toggle floating
+super + shift + f
+    if [ -z "$(bspc query -N -n focused.floating)" ]; then \
+        bspc node focused -t floating; \
+    else \
+        bspc node focused -t tiled; \
+    fi
+
+###############################
+
+
+#
+### WM WINDOWS
+#
+
+# focus or swap the node in the given direction
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# expand a window by moving one of its side outward
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -z {left -50 0,bottom 0 50,top 0 -50,right 50 0}
+
+# cycle trought nodes
+super + {j,k}
+	bspc node -f {next,prev}.local
+
+###############################
+
+#
+### WM DESKTOPS
+#
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# focus the next/previous desktop in the current monitor
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev,next}.local
+# send window to next/previous dekstop in the current monitor
+ctrl + alt + shift + {Left,Right}
+	bspc node -d {prev,next}.local
+
+###############################
+
+#
+### WM LAYOUTS
+#
+
+super + t
+	bsp-layout set tall
+super + shift + t
+	bsp-layout set tall
+super + g
+	bsp-layout set grid
+super + m
+	bsp-layout set monocle
+
+###############################

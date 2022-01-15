@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=sxhkd
+Comment=sxhkd
+Exec=sxhkd
+OnlyShowIn=bspwm

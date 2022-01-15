@@ -1,0 +1,3 @@
+settings,xfce4-settings-manager
+audio,pavucontrol
+toggle-loopback,bash ~/bin/toggle_loopback

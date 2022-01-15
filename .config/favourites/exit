@@ -1,0 +1,4 @@
+lock,xflock4
+shutdown,systemctl poweroff
+reboot,systemctl reboot
+suspend,systemctl suspend

@@ -21,6 +21,10 @@ super + Return
 Print
 	flameshot gui
 
+# run screenshot
+super + v
+	clipmenu
+
 # random wallapaper
 super + r
 	"$HOME/bin/randomwall"

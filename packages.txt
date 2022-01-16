@@ -19,3 +19,4 @@ awesome-freedesktop-git
 wmname
 bsp-layout
 picom
+jq

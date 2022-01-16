@@ -1,14 +1,8 @@
-# 
-### Miscellaneous
 #
-
-# reload bspwm and xshkd
-super + shift + r
-	bspc wm -r && pkill -USR1 -x sxhkd
-
-###############################
-
-
+#
+# reload bspwm: bspc wm -r
+# reload xshkd: pkill -USR1 -x sxhkd
+#
 # 
 ### Applications
 #
@@ -26,7 +20,7 @@ super + v
 	clipmenu
 
 # random wallapaper
-super + r
+super + shift + r
 	"$HOME/bin/randomwall"
 
 ctrl + @space
@@ -116,6 +110,10 @@ super + ctrl + {Left,Down,Up,Right}
 # cycle trought nodes
 super + {j,k}
 	bspc node -f {next,prev}.local.window
+
+# rotate nodes
+super + r
+	bspc node @parent -R 90
 
 ###############################
 

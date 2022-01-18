@@ -19,6 +19,14 @@ export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 # autocd
 shopt -s autocd
 
+# save current direcotry on cd
+cd() {
+    builtin cd "$@"
+    pwd > /tmp/current_directory
+}
+# autocd last savede directory
+[ -f /tmp/current_directory ] && cd "$(cat /tmp/current_directory)"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

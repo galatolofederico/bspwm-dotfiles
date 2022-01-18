@@ -15,7 +15,6 @@ fzf
 polybar
 dunst
 tint2
-awesome-freedesktop-git
 wmname
 bsp-layout
 picom

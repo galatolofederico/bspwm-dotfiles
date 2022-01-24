@@ -18,4 +18,6 @@ bspc config pointer_motion_interval 120
 
 xsetroot -cursor_name left_ptr
 
+bspc rule -a Matplotlib state=floating
+
 wmname LG3D

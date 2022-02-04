@@ -13,6 +13,7 @@ bin
 .config/autostart/picom.desktop
 .config/autostart/sxhkd.desktop
 .config/autostart/dunst.desktop
+.config/autostart/glava.desktop
 .config/bspwm
 .config/sxhkd
 .config/dunst

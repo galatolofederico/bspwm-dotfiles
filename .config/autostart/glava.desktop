@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=glava
+Comment=glava
+Exec=bash -c "~/bin/run_glava.sh"
+OnlyShowIn=bspwm

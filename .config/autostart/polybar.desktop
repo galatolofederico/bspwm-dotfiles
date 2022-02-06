@@ -3,5 +3,5 @@ Encoding=UTF-8
 Type=Application
 Name=polybar
 Comment=polybar
-Exec=polybar -r -config ~/.config/polybar/config.ini top
+Exec=bash -c "~/bin/run_polybar.sh"
 OnlyShowIn=bspwm

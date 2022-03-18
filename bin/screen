@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case $1 in
+    "single" )
+        xrandr --output $PRIMARY_MONITOR  --mode $PRIMARY_MONITOR_MODE --pos 0x0 --rotate normal
+        xrandr --output $SECONDARY_MONITOR --off
+        ;;
+    "multi" )
+        xrandr --output $LEFT_MONITOR  --mode $LEFT_MONITOR_MODE --pos 0x0 --rotate normal
+        xrandr --output $RIGHT_MONITOR --primary --mode $RIGHT_MONITOR_MODE --right-of $LEFT_MONITOR --rotate normal
+        ;;
+    "projector" )
+        xrandr --output $PRIMARY_MONITOR  --mode $PRIMARY_MONITOR_MODE --pos 0x0 --rotate normal
+        xrandr --output $SECONDARY_MONITOR --same-as $PRIMARY_MONITOR
+        ;;
+    * )
+        echo "usage: screen <single|multi|projector>"
+        exit
+esac

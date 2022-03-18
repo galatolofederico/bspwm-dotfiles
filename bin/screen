@@ -4,16 +4,40 @@ case $1 in
     "single" )
         xrandr --output $PRIMARY_MONITOR  --mode $PRIMARY_MONITOR_MODE --pos 0x0 --rotate normal
         xrandr --output $SECONDARY_MONITOR --off
+        
+        bspc monitor "^1" -n "$PRIMARY_MONITOR"
+        for d in 1 2 3 4 5 6 7 8 9 0; do
+            bspc desktop $d -m "$PRIMARY_MONITOR"
+        done
+        bspc monitor "$PRIMARY_MONITOR" -o 1 2 3 4 5 6 7 8 9 0
         ;;
     "multi" )
         xrandr --output $LEFT_MONITOR  --mode $LEFT_MONITOR_MODE --pos 0x0 --rotate normal
         xrandr --output $RIGHT_MONITOR --primary --mode $RIGHT_MONITOR_MODE --right-of $LEFT_MONITOR --rotate normal
+        
+        for d in 1 3 5 7 9; do
+            bspc desktop $d --to-monitor "$LEFT_MONITOR"
+        done
+        bspc monitor $LEFT_MONITOR --reset-desktops 1 3 5 7 9
+
+        for d in 2 4 6 8 0; do
+            bspc desktop $d --to-monitor "$RIGHT_MONITOR"
+        done
+        bspc monitor $RIGHT_MONITOR --reset-desktops 2 4 6 8 0
         ;;
     "projector" )
         xrandr --output $PRIMARY_MONITOR  --mode $PRIMARY_MONITOR_MODE --pos 0x0 --rotate normal
         xrandr --output $SECONDARY_MONITOR --same-as $PRIMARY_MONITOR
+        
+        bspc monitor "^1" -n "$PRIMARY_MONITOR"
+        for d in 1 2 3 4 5 6 7 8 9 0; do
+            bspc desktop $d -m "$PRIMARY_MONITOR"
+        done
+        bspc monitor "$PRIMARY_MONITOR" -o 1 2 3 4 5 6 7 8 9 0
         ;;
     * )
         echo "usage: screen <single|multi|projector>"
         exit
 esac
+
+bspc wm -O "$PRIMARY_MONITOR" "$SECONDARY_MONITOR"

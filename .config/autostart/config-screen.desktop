@@ -3,5 +3,5 @@ Encoding=UTF-8
 Type=Application
 Name=config-screen
 Comment=config-screen
-Exec=bash -c "sh $HOME/bin/config-screen.sh"
+Exec=bash -c "sleep 3 && sh $HOME/bin/config-screen.sh"
 OnlyShowIn=bspwm

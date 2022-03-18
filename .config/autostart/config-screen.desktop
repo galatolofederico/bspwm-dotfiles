@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=config-screen
+Comment=config-screen
+Exec=bash -c "~/bin/config-screen"
+OnlyShowIn=bspwm

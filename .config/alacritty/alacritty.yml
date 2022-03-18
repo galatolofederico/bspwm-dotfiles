@@ -18,7 +18,7 @@ font:
     family: monospace
     style: Bold Italic
 
-  size: 16
+  size: 12
 
 colors:
   primary:

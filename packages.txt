@@ -19,5 +19,4 @@ wmname
 bsp-layout
 picom
 jq
-glava
 slop
